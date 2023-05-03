@@ -1,11 +1,12 @@
-import {ReactNode} from "react";
+
 import PageHead from "@/components/PageHead";
 
-export default ():ReactNode => {
+export default ():JSX.Element => {
     return(
     <>
         <PageHead />
-        <>main2</>
+        <>main</>
+    
     </>
     )
 }
