@@ -6,8 +6,12 @@ export default siteConfig({
 	tabMenus : [{
 		name : 'About Me',
 		herf : 'a514ffc7a4f94b799a5384f4a9dfe522',
-    type : 'notion'
-	}],
+        type : 'notion'
+	},{
+        name : 'Pictures',
+        herf : '',
+        type : 'picture'
+    }],
   // =======================================================================================
   // the site's root Notion page (required)
   rootNotionPageId: 'cd8ab8082dab425cbd1afec55d9c414a',

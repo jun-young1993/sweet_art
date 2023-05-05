@@ -1,9 +1,9 @@
 import * as types from './types'
 
 export interface SiteConfig {
-	webTitle : string
-	webDescription : string
-	tabMenus : types.TabMenu[]
+  webTitle : string
+  webDescription : string
+  tabMenus : types.TabMenu[]
 
 
   rootNotionPageId: string
@@ -46,6 +46,8 @@ export interface NavigationLink {
   url?: string
 }
 
-export const siteConfig = (config: SiteConfig): SiteConfig => {
+export const siteConfig = (config:
+                               {
+                                 webDescription: string; github: string; defaultPageIcon: null; navigationStyle: string; author: string; pageUrlOverrides: null; webTitle: string; description: string; linkedin: string; defaultPageCoverPosition: number; defaultPageCover: null; isPreviewImageSupportEnabled: boolean; twitter: string; tabMenus: ({ herf: string; name: string; type: string } | { herf: string; name: string; type: string })[]; isRedisEnabled: boolean; domain: string; name: string; rootNotionSpaceId: null; rootNotionPageId: string }): SiteConfig => {
   return config
 }

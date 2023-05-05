@@ -39,7 +39,7 @@ export default function PageHead() {
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
-            <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
+            <img className="h-8 w-auto" src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fd7b01a1c-d92e-44ee-bf55-cf715bb8d3d3%2FUntitled.png?table=block&id=b067c2c0-baa8-4b4b-a4c6-e202d4d4a6b4&spaceId=45e5d7de-c052-4677-be01-f6ae18382d8a&width=2000&userId=7bab1fca-f898-4327-85ef-367dbf831f1d&cache=v2" alt="" />
           </a>
         </div>
         <div className="flex lg:hidden">
@@ -105,7 +105,7 @@ export default function PageHead() {
           </Popover> */}
           {tabMenus.map((menu:TabMenu) => {
             return (
-              <Link key={menu.name} href={`${menu.type}/${menu.herf}`} className="text-sm font-semibold leading-6 text-gray-900">
+              <Link key={menu.name} href={`/${menu.type}/${menu.herf}`} className="text-sm font-semibold leading-6 text-gray-900">
                 {menu.name}
               </Link>
             )
@@ -168,7 +168,7 @@ export default function PageHead() {
                 </Disclosure>
                 {tabMenus.map((menu:TabMenu) => {
                   return (
-                    <Link key={menu.name} href={menu.herf} className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                    <Link key={menu.name} href={`/${menu.type}/${menu.herf}`} className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
                       {menu.name}
                     </Link>
                   )
