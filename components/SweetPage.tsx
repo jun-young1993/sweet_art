@@ -4,12 +4,14 @@ import {Carousel} from "@material-tailwind/react";
 import { ThemeProvider } from "@material-tailwind/react";
 import {QueryDatabaseResponse} from "@notionhq/client/build/src/api-endpoints";
 import {NotionDatabase} from "@/lib/notion-client";
+import {NotionPage} from "@/components/NotionPage";
 interface SweetViewInterface {
     data : QueryDatabaseResponse
+    recordMap : any
 }
 
 export default (props:SweetViewInterface):JSX.Element => {
-    const {data} = props
+    const {data,recordMap} = props
     return(
     <>
         <PageHeader />
@@ -34,7 +36,7 @@ export default (props:SweetViewInterface):JSX.Element => {
                 </Carousel>
             </ThemeProvider>
         </div>
-
+        <NotionPage {...recordMap} />
     </>
     )
 }

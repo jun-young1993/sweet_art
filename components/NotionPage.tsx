@@ -257,27 +257,27 @@ export const NotionPage: React.FC<types.PageProps> = ({
       {isDarkMode && <BodyClassName className='dark-mode' />}
 
       <NotionRenderer
-        // bodyClassName={cs(
-        //   styles.notion,
-        //   pageId === site.rootNotionPageId && 'index-page'
-        // )}
-        // darkMode={isDarkMode}
+        bodyClassName={cs(
+          styles.notion,
+          pageId === site.rootNotionPageId && 'index-page'
+        )}
+        darkMode={false}
         components={components}
         recordMap={recordMap}
-        // rootPageId={site.rootNotionPageId}
-        // rootDomain={site.domain}
-        // fullPage={!isLiteMode}
-        // previewImages={!!recordMap.preview_images}
-        // showCollectionViewDropdown={false}
-        // showTableOfContents={showTableOfContents}
-        // minTableOfContentsItems={minTableOfContentsItems}
-        // defaultPageIcon={config.defaultPageIcon}
-        // defaultPageCover={config.defaultPageCover}
-        // defaultPageCoverPosition={config.defaultPageCoverPosition}
-        // mapPageUrl={siteMapPageUrl}
-        // mapImageUrl={mapImageUrl}
-        // searchNotion={config.isSearchEnabled ? searchNotion : null}
-        // pageAside={pageAside}
+        rootPageId={site.rootNotionPageId}
+        rootDomain={site.domain}
+        fullPage={!isLiteMode}
+        previewImages={!!recordMap.preview_images}
+        showCollectionViewDropdown={false}
+        showTableOfContents={showTableOfContents}
+        minTableOfContentsItems={minTableOfContentsItems}
+        defaultPageIcon={config.defaultPageIcon}
+        defaultPageCover={config.defaultPageCover}
+        defaultPageCoverPosition={config.defaultPageCoverPosition}
+        mapPageUrl={siteMapPageUrl}
+        mapImageUrl={mapImageUrl}
+        searchNotion={config.isSearchEnabled ? searchNotion : null}
+        pageAside={pageAside}
         // footer={footer}
       />
 

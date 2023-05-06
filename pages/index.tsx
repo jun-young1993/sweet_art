@@ -13,9 +13,10 @@ export const getStaticProps = async () => {
       database_id : process.env.NEXT_PUBLIC_NOTION_PICTURE_DATABASES_KEY,
       page_size : 5
     })
+    const recordMap = await resolveNotionPage(domain,process.env.NEXT_PUBLIC_NOTION_MAIN_PAGE_KEY)
     // const props = await resolveNotionPage(domain)
 
-    return { props : { data : data}}
+    return { props : { data : data, recordMap : recordMap}}
   } catch (err) {
     console.error('page error', domain, err)
 
