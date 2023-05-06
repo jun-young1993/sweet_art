@@ -14,7 +14,7 @@ import PageHeader from '@/components/PageHeader'
 import { domain } from '@/lib/config'
 
 export const getStaticProps = async () => {
-  const props = await resolveNotionPage(domain,'ff071cb40d614a62aa88d335261b8b10')
+  const props = await resolveNotionPage(domain,process.env.NEXT_PUBLIC_NOTION_ABOUT_ME_PAGE_KEY)
   return {props}
 }
 export default (props:any) :JSX.Element => {

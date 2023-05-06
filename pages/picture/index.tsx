@@ -3,15 +3,24 @@ import {NotionPage} from "@/components/NotionPage";
 import PicturePreview from "@/components/PicturePreview";
 import {resolveNotionPage} from "@/lib/resolve-notion-page";
 import {domain} from "@/lib/config";
-
-export const getStaticProps = async () => {
-    const rawPageId = 'c646da3f-1c09-4f6c-9953-228968308f93' as string;
-    const props = await resolveNotionPage(domain,rawPageId)
-    console.log('props',props)
-    return {props}
+import {QueryDatabaseResponse} from "@notionhq/client/build/src/api-endpoints";
+import {notion} from "@/lib/notion-client";
+interface PictureViewInterface {
+    data : QueryDatabaseResponse
 }
-export default (props:any) :JSX.Element => {
+export const getStaticProps = async () => {
+    const data:QueryDatabaseResponse = await notion.databases.query({
+        database_id : process.env.NEXT_PUBLIC_NOTION_PICTURE_DATABASES_KEY
+    })
+    return {
+        props : {
+            data :data
+        }
+    }
+}
+export default (props:PictureViewInterface) :JSX.Element => {
     // return <NotionPage {...props} />
+
     const a = [
         {
             name: 'Desk and Office',
@@ -91,12 +100,25 @@ export default (props:any) :JSX.Element => {
             href: '#',
         },
     ]
-    console.log('props',props)
+    const {data} = props;
+    console.log(data)
     return (
         <>
             <PageHeader />
             <PicturePreview
-                data={a}
+                // data={a}
+                data={data.results.map((result) => {
+
+                    // @ts-ignore
+                    const property = result?.properties
+                    return {
+                        name: property?.name?.title[0]?.text?.content,
+                        description: property?.description?.rich_text[0]?.text?.content,
+                        imageSrc: property?.image?.files[0]?.file?.url,
+                        imageAlt: property?.imageAlt?.rich_text[0]?.text?.content,
+                        href: '#',
+                    }
+                })}
             />
         </>
     )
