@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-notion-starter-kit",
+  "name": "sweet-art",
   "version": "2.0.0",
   "private": true,
   "description": "The perfect starter kit for building beautiful websites with Next.js and Notion.",
@@ -74,5 +74,13 @@
     "prettier": "^2.7.1",
     "tailwindcss": "^3.3.2",
     "typescript": "^4.8.4"
+  },
+  "overrides": {
+    "cacheable-request": {
+      "keyv": "npm:@keyvhq/core@~1.6.6"
+    }
+  },
+  "bugs": {
+    "url": "https://github.com/jun-young1993/sweet_art/issues"
   }
 }

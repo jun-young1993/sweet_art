@@ -21,8 +21,8 @@ export default siteConfig({
   rootNotionSpaceId: null,
 
   // basic site info (required)
-  name: 'Next.js Notion Starter Kit',
-  domain: 'nextjs-notion-starter-kit.transitivebullsh.it',
+  name: 'Sweet_art',
+  domain: 'https://sweet-art.vercel.app',
   author: 'Travis Fischer',
 
   // open graph metadata (optional)
