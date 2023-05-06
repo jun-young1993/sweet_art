@@ -39,7 +39,7 @@ export default function PageHead() {
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
-            <img className="h-8 w-auto" src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fd7b01a1c-d92e-44ee-bf55-cf715bb8d3d3%2FUntitled.png?table=block&id=b067c2c0-baa8-4b4b-a4c6-e202d4d4a6b4&spaceId=45e5d7de-c052-4677-be01-f6ae18382d8a&width=2000&userId=7bab1fca-f898-4327-85ef-367dbf831f1d&cache=v2" alt="" />
+            <img className="h-8 w-auto" src="https://www.notion.so//image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F74994c33-9c49-409f-aa70-4dba050c822c%2FUntitled.png?id=e95d5655-5b1a-46be-babf-641889d74c20&table=block&spaceId=45e5d7de-c052-4677-be01-f6ae18382d8a&width=500&userId=7bab1fca-f898-4327-85ef-367dbf831f1d&cache=v2" alt="" />
           </a>
         </div>
         <div className="flex lg:hidden">

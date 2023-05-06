@@ -4,12 +4,18 @@ import { NotionPage } from '@/components/NotionPage'
 import { domain } from '@/lib/config'
 import { resolveNotionPage } from '@/lib/resolve-notion-page'
 import SweetPage from '@/components/SweetPage'
+import {QueryDatabaseResponse} from "@notionhq/client/build/src/api-endpoints";
+import {NotionDatabase} from "@/lib/notion-client";
 
 export const getStaticProps = async () => {
   try {
-    const props = await resolveNotionPage(domain)
+    const data:QueryDatabaseResponse = await  NotionDatabase({
+      database_id : process.env.NEXT_PUBLIC_NOTION_PICTURE_DATABASES_KEY,
+      page_size : 5
+    })
+    // const props = await resolveNotionPage(domain)
 
-    return { props, revalidate: 10 }
+    return { props : { data : data}}
   } catch (err) {
     console.error('page error', domain, err)
 
@@ -19,6 +25,6 @@ export const getStaticProps = async () => {
   }
 }
 
-export default function Home() {
-  return <SweetPage />
+export default function Home(props:any) {
+  return <SweetPage {...props}/>
 }
