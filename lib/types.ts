@@ -70,7 +70,7 @@ export interface NotionPageInfo {
   authorImage: string
   detail: string
 }
-type TabMenuType = 'notion' | 'pictures' | 'picture'
+type TabMenuType = 'notion' | 'pictures' | 'picture' | ''
 export interface TabMenu {
 	name : string
 	herf : string

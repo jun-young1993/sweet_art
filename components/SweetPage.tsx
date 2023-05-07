@@ -5,6 +5,7 @@ import { ThemeProvider } from "@material-tailwind/react";
 import {QueryDatabaseResponse} from "@notionhq/client/build/src/api-endpoints";
 import {NotionDatabase} from "@/lib/notion-client";
 import {NotionPage} from "@/components/NotionPage";
+import { favicon } from "@/lib/config";
 interface SweetViewInterface {
     data : QueryDatabaseResponse
     recordMap : any
@@ -36,6 +37,7 @@ export default (props:SweetViewInterface):JSX.Element => {
                 </Carousel>
             </ThemeProvider>
         </div>
+        {/*<img className="h-auto max-w-full" src={`/${favicon}`} alt="image description" />*/}
         <NotionPage {...recordMap} />
     </>
     )

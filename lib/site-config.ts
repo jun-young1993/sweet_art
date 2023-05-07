@@ -4,7 +4,7 @@ export interface SiteConfig {
   webTitle : string
   webDescription : string
   tabMenus : types.TabMenu[]
-
+  favicon : string
 
   rootNotionPageId: string
   rootNotionSpaceId?: string

@@ -4,6 +4,10 @@ export default siteConfig({
   webTitle : "sweet_art",
 	webDescription : "no description jun",
 	tabMenus : [{
+      name : 'Home',
+      herf : '',
+      type : ''
+    }, {
 		name : 'About Me',
 		herf : 'a514ffc7a4f94b799a5384f4a9dfe522',
         type : 'notion'
@@ -12,6 +16,7 @@ export default siteConfig({
         herf : '',
         type : 'picture'
     }],
+  favicon: "sweet_art.png",
   // =======================================================================================
   // the site's root Notion page (required)
   rootNotionPageId: 'cd8ab8082dab425cbd1afec55d9c414a',

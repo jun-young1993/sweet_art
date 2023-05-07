@@ -64,6 +64,7 @@ export const zhihu: string | null = getSiteConfig('zhihu', null)
 export const webTitle:SiteConfig['webTitle'] = getSiteConfig('webTitle','No Title')
 export const webDescription:SiteConfig['webDescription'] = getSiteConfig('webDescription','No Web Description')
 export const tabMenus:SiteConfig['tabMenus'] = getSiteConfig('tabMenus',[])
+export const favicon:SiteConfig['favicon'] = getSiteConfig('favicon',"favicon.png")
 export const getMastodonHandle = (): string | null => {
   if (!mastodon) {
     return null
