@@ -254,7 +254,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
       /> */}
 
       {isLiteMode && <BodyClassName className='notion-lite' />}
-      {isDarkMode && <BodyClassName className='dark-mode' />}
+      {/*{isDarkMode && <BodyClassName className='dark-mode' />}*/}
 
       <NotionRenderer
         bodyClassName={cs(
