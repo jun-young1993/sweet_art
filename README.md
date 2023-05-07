@@ -4,11 +4,7 @@
 
 ![sweet_art.png](https://file.notion.so/f/s/c3f5b541-995a-4351-a5ef-88e8f2736145/sweet_art.png?id=861784e8-9918-41d2-ba8e-31e33fb4d81d&table=block&spaceId=45e5d7de-c052-4677-be01-f6ae18382d8a&expirationTimestamp=1683441587137&signature=_Zbwyi4_nM-pp2zOMNYOjAgmNtwtCHnZHdP6o-Crtgo&downloadName=sweet_art.png)
 
-## 찾아오시는 길
-
-경기 남양주시 다산중앙로 117 314호 단화실
-
-## 작품보기
+## 구경하기
 
 [https://sweet-art.vercel.app/](https://sweet-art.vercel.app/)
 
