@@ -8,7 +8,7 @@ import {NotionDatabase} from "@/lib/notion-client";
 interface PictureViewInterface {
     data : QueryDatabaseResponse
 }
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
     const data:QueryDatabaseResponse = await NotionDatabase({
         database_id : process.env.NEXT_PUBLIC_NOTION_PICTURE_DATABASES_KEY,
     })
@@ -21,7 +21,7 @@ export const getStaticProps = async () => {
 export default (props:PictureViewInterface) :JSX.Element => {
     // return <NotionPage {...props} />
 
-
+    console.log('props ',props)
     const {data} = props;
 
     return (
