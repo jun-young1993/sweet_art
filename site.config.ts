@@ -15,7 +15,11 @@ export default siteConfig({
         name : 'Pictures',
         herf : '',
         type : 'picture'
-    }],
+  },{
+        name : 'Setting',
+        herf : '',
+        type : 'admin'
+  }],
   favicon: "sweet_art.png",
   // =======================================================================================
   // the site's root Notion page (required)
