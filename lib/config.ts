@@ -150,7 +150,8 @@ export const apiBaseUrl = `/api`
 export const api = {
   searchNotion: `${apiBaseUrl}/search-notion`,
   getNotionPageInfo: `${apiBaseUrl}/notion-page-info`,
-  getSocialImage: `${apiBaseUrl}/social-image`
+  getSocialImage: `${apiBaseUrl}/social-image`,
+  simpleUpload : `${apiBaseUrl}/msal/simple-upload`
 }
 
 // ----------------------------------------------------------------------------
@@ -221,4 +222,10 @@ function invertPageUrlOverrides(
       [pageId]: uri
     }
   }, {})
+}
+
+
+export const dbStoreBasePath = '/store'
+export const dbStorePath = {
+  image : `${dbStoreBasePath}/image`
 }

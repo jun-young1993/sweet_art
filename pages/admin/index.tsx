@@ -7,6 +7,7 @@ import { ChangeEvent, useEffect, useState } from 'react'
 import {  useRouter } from 'next/router'
 import {ParsedUrlQuery, parse as urlParse} from 'querystring'
 import axios, { AxiosProgressEvent } from 'axios';
+import { api } from '@/lib/config';
 
 // export const getStaticProps = async () => {
 //   const props = await resolveNotionPage(domain,process.env.NEXT_PUBLIC_NOTION_ABOUT_ME_PAGE_KEY)
@@ -26,7 +27,8 @@ const initMsalAuthInfo:ParsedUrlQuery = {
   token_type : null,
   user_id : null
 }
-const msalAuthUri: string = `https://login.live.com/oauth20_authorize.srf?client_id=${process.env.NEXT_PUBLIC_MSAL_CLIENT_ID}&scope=${process.env.NEXT_PUBLIC_MSAL_SCOPE}&response_type=token&redirect_uri=${process.env.NEXT_PUBLIC_MSAL_REDIRECT_URI}`
+const msalAuthUri2: string = `https://login.live.com/oauth20_authorize.srf?client_id=${process.env.NEXT_PUBLIC_MSAL_CLIENT_ID}&scope=${process.env.NEXT_PUBLIC_MSAL_SCOPE}&response_type=token&redirect_uri=${process.env.NEXT_PUBLIC_MSAL_REDIRECT_URI}`
+const msalAuthUri: string =  `https://login.microsoftonline.com/consumers/oauth2/v2.0/token`
 export default (props:any) :JSX.Element => {
     // return <NotionPage {...props} />
 
@@ -51,12 +53,13 @@ export default (props:any) :JSX.Element => {
     const uploadFile = async (file:File) => {
       const formData = new FormData()
       formData.append('file',file)
-      const res = await fetch('/api/msal/simple-upload',{
-        method : 'POST',
-        body : formData
-      })
-      axios.post('/api/msal/simple-upload',formData,{
-        headers: { "content-type": "multipart/form-data" },
+      
+ 
+      axios.post(api.simpleUpload,formData,{
+        headers: { 
+          "content-type": "multipart/form-data" ,
+          "access-token" : authInfo.access_token
+        },
         onUploadProgress(progressEvent:AxiosProgressEvent) {
           console.log(Math.round((progressEvent.loaded * 100) / progressEvent.total))
           setProgress(Math.round((progressEvent.loaded * 100) / progressEvent.total));
@@ -72,9 +75,27 @@ export default (props:any) :JSX.Element => {
       uploadFile(file)
       console.log(file)
     }
+    console.log('start')
+
+    axios.post('https://login.microsoftonline.com/common/oauth2/v2.0/token',{
+      client_id : process.env.NEXT_PUBLIC_MSAL_CLIENT_ID,
+      code : 'code',
+      redirect_uri : process.env.NEXT_PUBLIC_MSAL_REDIRECT_URI,
+      scope: process.env.NEXT_PUBLIC_MSAL_SCOPE,
+      grant_type : "authorization_code",
+      client_secret : "nym8Q~rywAT0MUOVHF1oWym_-gyoT_1ZX9K.~apA"
+    })
+    .then((resolve) => {
+      console.log("resolve",resolve)
+    })
+    .catch((exception) => {
+      console.log("exeption",exception)
+    })
     useEffect(()=>{
+  
       if(JSON.stringify(parseHash) === '{}'){
-        window.location.href = msalAuthUri
+        // window.location.href = msalAuthUri
+    
       }else{
         setAuthInfo(parseHash)
       }   
